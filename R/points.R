@@ -14,7 +14,13 @@ assign_colors <- function(data,color_by = "deviceid", color_group = "assessment_
 
 }
 
-
+#' add points of an assesment to the web map
+#' @param .base_map a leaflet basemap, i.e. made with base_map()
+#' @param assessment_data your assessment data as a data.frame (can use read.csv() to make this)
+#' @param gps.lng.column name of the latitude column in quotes (optional)
+#' @param gps.lon.column name of the latitude column in quotes (optional)
+#' @param color.by.column name of the column to color by (max 8 unique values)
+#' @param color.group.column name of the column of groups between which colours don't need to be unique
 #' @export
 som_map_add_points<-function(.base_map,
                              assessment_data,
