@@ -1,0 +1,75 @@
+---
+title: "example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## How to make a somalia webmap
+
+Step 1: load this package:
+```{r setup, eval = F}
+library(webmap)
+```
+
+
+
+Step 2: create a basemap:
+
+```{r,eval =F}
+
+som_basemap()
+
+
+```
+
+
+step 3: load your data:
+
+```{r,eval =F}
+mydata<-read.csv("some_data.csv")
+```
+
+
+step 4: make basemap and add points
+
+```{r,eval =F}
+
+som_basemap() %>% som_map_add_points(assessment_data = mydata)
+
+```
+
+
+If the latitude longitude column don't match the default, add them like this:
+
+```{r,eval =F}
+som_basemap() %>% som_map_add_points(assessment_data = mydata,
+                                     gps.lng.column = "longitude",
+                                     gps.lat.column = "latitude")
+
+
+```
+
+If you want to colour by a specific column, use `color.by.column` and `color.by.group`.
+There can only be 8 colours at most.
+
+
+
+```{r,eval =F}
+som_basemap() %>% som_map_add_points(assessment_data = mydata,
+                                     gps.lng.column = "longitude",
+                                     gps.lat.column = "latitude",
+                                     color.by.column = "deviceid",
+                                     color.by.group  = "region")
+
+
+```
