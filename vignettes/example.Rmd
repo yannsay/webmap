@@ -69,7 +69,7 @@ som_basemap() %>% som_map_add_points(assessment_data = mydata,
                                      gps.lng.column = "longitude",
                                      gps.lat.column = "latitude",
                                      color.by.column = "deviceid",
-                                     color.by.group  = "region")
+                                     color.group.column  = "region")
 
 
 ```

@@ -33,7 +33,7 @@ som_map_add_points<-function(.base_map,
   if(!(gps.lng.column %in% names(assessment_data))){stop(paste(gps.lng.column," not in data headers"))}
   if(!(gps.lat.column %in% names(assessment_data))){stop(paste(gps.lat.column,"gps.lat.column not in data headers"))}
   if(!(color.by.column %in% names(assessment_data))){stop(paste(color.by.column," not in data headers"))}
-  if(!(gps.lng.column %in% names(assessment_data))){stop(paste(gps.lng.column," not in data headers"))}
+  if(!(color.group.column %in% names(assessment_data))){stop(paste(color.group.column," not in data headers"))}
   lng.formula <- as.formula(paste0("~",gps.lng.column))
   lat.formula <- as.formula(paste0("~",gps.lat.column))
 
